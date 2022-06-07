@@ -20,9 +20,9 @@ features:
   - title: 史上最佳！
     details: 抛弃那些过时的 Windows 包管理器吧，这才是你想要的一切。
   - title: 孵化自 Edgeless PE
-    details: 基于对 Edgeless 包管理的深入思考和生产实践重新构建
+    details: 基于对 Edgeless 包管理的深入思考和实践经验重新构建。
   - title: 专为国内软件生态设计
-    details: 我们面临着地狱级的难题，但依旧游刃有余
-  - title: 由 Rust 强力驱动
-    details: 安全、高效、简洁，无需安装繁重的运行时依赖
+    details: 我们面临着地狱级的难题，但依旧游刃有余。
+  - title: 由 Rust 强力驱动 ⚙
+    details: 安全、高效、简洁，无需安装繁重的运行时依赖。
 ---

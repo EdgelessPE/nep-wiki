@@ -21,9 +21,16 @@ export default defineConfig({
       copyright: "Copyright © 2022-present Cno",
     },
     editLink: {
-      pattern: "https://github.com/vuejs/vitepress/edit/main/docs/:path",
-      text: "在 GitHub 上编辑此页",
+      style: 'github',
+      domain: 'github.com',
+      repo: 'EdgelessPE/nep-wiki',
+      branch: 'master',
+      dir: 'docs',
+      text: '在 GitHub 上编辑此页'
     },
     lastUpdatedText: "最近更新于",
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/EdgelessPE/nep-cli' }
+    ],
   },
 });
