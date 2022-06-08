@@ -19,6 +19,14 @@ export default [
         text: "Package",
         link: "/reference/Package",
       },
+      {
+        text: "Software",
+        link: "/reference/Software",
+      },
+      {
+        text: "WorkflowConfig",
+        link: "/reference/WorkflowConfig",
+      },
     ],
   },
   {
