@@ -19,7 +19,20 @@
 ## type
 资源包内容类型。
 - **类型：** `Enum<String>`
-- **取值：** `{"Software", "Driver", "Manifest", "Runtime", "Theme"}`
+- **取值：** `{"Software", "Driver", "Manifest", "Runtime"}`
+- **细节**
+
+    `Software` 代表软件；
+
+    `Driver` 代表驱动程序；
+
+    `Manifest` 代表[清单资源包](property.md#清单资源包)；
+
+    `Runtime` 代表运行时，例如 `dotNet Framework` `Python` `Microsoft Visual C++ Runtime Library` 等。
+
+    :::tip
+    截至目前，nep 仅实现了对 `Software` 和 `Runtime` 类型的支持。
+    :::
 - **示例**
     ```toml
     type = "Software"
