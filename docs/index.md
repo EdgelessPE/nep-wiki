@@ -3,6 +3,7 @@ layout: home
 
 title: NEP Wiki
 titleTemplate: 下一代 Edgeless 资源包官方文档
+sidebar: false
 
 hero:
   name: NEP
@@ -18,7 +19,7 @@ hero:
 
 features:
   - title: 史上最佳！
-    details: 抛弃那些过时的 Windows 包管理器吧，这才是你想要的一切。
+    details: 抛弃那些过时的 Windows 包管理器吧，这里有你想要的一切。
   - title: 孵化自 Edgeless PE
     details: 基于对 Edgeless 包管理的深入思考和实践经验重新构建。
   - title: 专为国内软件生态设计
