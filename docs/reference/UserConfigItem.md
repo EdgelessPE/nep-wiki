@@ -1,4 +1,4 @@
-# UserConfig
+# UserConfigItem
 
 用户配置变量元素，支持定义 `bool` `int` `String` 三种类型的变量，然后通过 `${uc.KEY_NAME}` 调用。
 

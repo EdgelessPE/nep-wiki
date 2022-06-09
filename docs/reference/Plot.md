@@ -8,15 +8,15 @@
 
 - **示例**
 
-      ```toml
-      [polt]
-      fileList = [
-          {
-              name = "frpc.ini",
-              description = "frp客户端配置文件",
-              required = true
-          }
-      ]
-      ```
+    ```toml
+    [polt]
+    fileList = [
+        {
+            name = "frpc.ini",
+            description = "frp客户端配置文件",
+            required = true
+        }
+    ]
+    ```
 
   <!-- TODO:如果必须则应当提供缺省时的文件 -->
