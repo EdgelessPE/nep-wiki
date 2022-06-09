@@ -1,7 +1,17 @@
 # Software
 
 软件资源包的独占信息。
+## scope
+软件名称作用域，用于区分来自不同内容提供方的同名软件。
+- **类型：** `String`
+- **细节**
 
+  通常直接使用内容提供方的全小写名称作为值。在安装时，没有名称冲突的软件可以使用 `ept install SOFTWARE_NAME` 和 `ept install SCOPE/SOFTWARE_NAME` 两种方式指定安装同一款软件。
+
+- **示例**
+  ```toml
+  scope = "microsoft"
+  ```
 ## upstream
 
 软件上游 URL，打包者获取此软件的官方发布页面。
