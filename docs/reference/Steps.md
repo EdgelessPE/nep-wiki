@@ -263,7 +263,7 @@ Group 与 ExitCode 配合使用时有一些注意事项，详见 [ExitCode](#exi
     [setup_flow.new_folder]
     name = "New folder"
     type = "New"
-    
+
     target = "${SystemDrive}/Users/Config/"
     overwrite = true
     ```
@@ -336,7 +336,7 @@ Group 与 ExitCode 配合使用时有一些注意事项，详见 [ExitCode](#exi
     target = "vscode.exe"
     ```
 ## Path
-将文件/文件夹暴露在 PATH 变量中。如果指定了一个文件夹则会将此文件夹添加到当前用户的 PATH 变量；如果指定了一个文件则会将该文件软链接至 nep 的专用 PATH 目录下暴露。
+将文件/文件夹暴露在 PATH 变量中。如果指定了一个文件夹则会将此文件夹添加到当前用户的 PATH 变量；如果指定了一个文件则会将该文件的快捷方式放置到 nep 的专用 PATH 目录下暴露。
 - **参数**
 
     - `record :String`：需要增/删的记录值
