@@ -1,3 +1,7 @@
+import fs from "fs"
+import path from "path"
+import process from "process"
+
 export default [
   {
     text: "开始",
@@ -14,20 +18,7 @@ export default [
   },
   {
     text: "API 参考",
-    items: [
-      {
-        text: "Package",
-        link: "/reference/Package",
-      },
-      {
-        text: "Software",
-        link: "/reference/Software",
-      },
-      {
-        text: "WorkflowConfig",
-        link: "/reference/WorkflowConfig",
-      },
-    ],
+    items: autoGenerate("reference"),
   },
   {
     text:"杂项",
@@ -43,3 +34,16 @@ export default [
     ]
   }
 ];
+
+function autoGenerate(dir){
+  let list=fs.readdirSync(path.join(process.cwd(),"docs",dir))
+  return list
+  .filter(name=>name.endsWith(".md"))
+  .map(name=>{
+    name=name.slice(0,-3)
+    return {
+      text:name,
+      link:`/${dir}/${name}`
+    }
+  })
+}
