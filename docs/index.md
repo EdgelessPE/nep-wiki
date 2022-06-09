@@ -12,7 +12,7 @@ hero:
   actions:
     - theme: brand
       text: 快速开始
-      link: /guide/getting-started
+      link: /wiki/guide/getting-started
     - theme: alt
       text: 查看仓库
       link: https://github.com/EdgelessPE/nep-cli
