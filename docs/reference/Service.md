@@ -16,3 +16,7 @@
   start = "./sshd.exe"
   stop = "taskkill /im sshd.exe /t"
   ```
+
+:::tip
+命令默认使用 cmd 进行解释
+:::

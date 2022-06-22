@@ -3,13 +3,13 @@
 用户配置变量元素，支持定义 `bool` `int` `String` 三种类型的变量，然后通过 `${uc.KEY_NAME}` 调用。
 
 :::tip
-`int` 类型变量使用 `int64` 表达，支持的范围为 `-9223372036854775808 ~ 9223372036854775807`
+`int` 类型变量使用 `int64` 表达，支持的范围为 `-9223372036854775808 ~ 9223372036854775807`。
 :::
 
 - **通用参数**
 
-  - `name :String`：变量名称，用于向用户展示
-  - `description :String`：变量描述，用于向用户展示
+  - `name :String`：变量名称
+  - `description :String`：变量描述，用于向用户说明此变量用途
   - `default :T`：默认值，类型 `T` 只能为 `{bool, int, String}` 中的一种
   - `options :Array<{title :String, value :T}>`：（可选）值选项，`title` 为该选项描述，`value` 为该选项对应的值，类型必须与 `default` 一致；缺省时根据类型自动提供选择/输入界面
 

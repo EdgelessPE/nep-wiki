@@ -500,26 +500,26 @@ Group 与 ExitCode 配合使用时有一些注意事项，详见 [ExitCode](内�
 
 - **示例**
 
-      ```toml
-      [expand_flow.download_vscode]
-      name = "Download VSCode"
-      type = "Download"
+    ```toml
+    [expand_flow.download_vscode]
+    name = "Download VSCode"
+    type = "Download"
 
-      url = "https://az764295.vo.msecnd.net/stable/7f6ab5485bbc008386c4386d08766667e155244e/VSCodeUserSetup-x64-1.60.2.exe"
-      save = "./vscode.exe"
-      md5 = "DD4DD2E97577D88B4E6E4B3BF4AA86A9"
-      overwrite = false
-      wait = false
-      thread = 16
-      ```
+    url = "https://az764295.vo.msecnd.net/stable/7f6ab5485bbc008386c4386d08766667e155244e/VSCodeUserSetup-x64-1.60.2.exe"
+    save = "./vscode.exe"
+    md5 = "DD4DD2E97577D88B4E6E4B3BF4AA86A9"
+    overwrite = false
+    wait = true
+    thread = 16
+    ```
 
   :::tip
-  如果需要异步地下载并执行回调，请改为使用脚本，我们会在 [`${Aria2cPath}`](内置变量.md#aria2cpath) 参数上提供一个现成的 aria2c.exe 可执行文件。
+  如果需要异步地下载并执行回调，请改用脚本，我们会在 [`${Aria2cPath}`](内置变量.md#aria2cpath) 参数上提供一个现成的 aria2c.exe 可执行文件。
   :::
 
 ## Unzip
 
-解包压缩文件，文件类型范围等同于 [7-Zip](https://www.7-zip.org/) 支持范围。
+解包压缩文件，支持的文件类型范围等同于 [7-Zip](https://www.7-zip.org/) 支持范围。
 
 - **参数**
 
@@ -550,14 +550,14 @@ Group 与 ExitCode 配合使用时有一些注意事项，详见 [ExitCode](内�
 
 - **示例**
 
-      ```toml
-      [setup_flow.send_key]
-      name = "Send key"
-      type = "SendKey"
+    ```toml
+    [setup_flow.send_key]
+    name = "Send key"
+    type = "SendKey"
 
-      key = "Enter"
-      focus = "Chrome Setup"
-      ```
+    key = "Enter"
+    focus = "Chrome Setup"
+    ```
 
   :::tip
   如果此步骤无法满足你的需求，你可以使用 [`Script` 步骤](#script)运行一个 AutoHotKey 脚本来实现复杂的模拟按键操作。

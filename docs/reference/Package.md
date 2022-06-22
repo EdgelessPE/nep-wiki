@@ -9,7 +9,7 @@
 - **类型：** `String`
 - **细节**
 
-  包名中不能包含 `_`，如果需要使用 `_` 分割内容，请用空格或 `-` 达到近似目的。例如 `Python-runtime` 或 `IntelliJ IDEA Community`。
+  包名中不能包含 `_`。如果需要使用 `_` 分割内容，请用空格或 `-` 达到近似目的。例如 `frp-server` 或 `IntelliJ IDEA Community`。
   :::tip
   注意仅能使用 `-` 分割同名软件的不同版本，详见[规范](/misc/norm.md#使用-分割同名软件的不同版本)。
   :::
@@ -38,7 +38,7 @@
   `Runtime` 代表运行时，例如 `dotNet Framework` `Python` `Microsoft Visual C++ Runtime Library` 等。
 
   :::tip
-  截至目前，nep 仅实现了对 `Software` 和 `Runtime` 类型的支持。
+  截至目前，nep 尚未支持 `Driver`。
   :::
 
 - **示例**
@@ -98,19 +98,19 @@
 
 - **示例**
   ```toml
-  description = "Visual Studio Code combines the simplicity of a code editor with what developers need for their core edit-build-debug cycle."
+  description = "微软开发的跨平台开源编辑器"
   ```
 
 ## licence
 
-资源对应的许可证名称或链接。
+资源对应的许可证名称或用户协议链接。
 
 - **类型：** `String`
 - **细节**
 
   如果资源是使用知名协议的开源软件，此值可以为 `GPL-3.0` `MIT` `MPL-2.0` 等 [SPDX 协议标识符](https://spdx.org/licenses/)；
 
-  如果资源是商用软件，此值可以是一个指向商业协议网页的 URL 链接；
+  如果资源是商用软件，此值可以是一个指向用户协议网页的 URL 链接；
 
   如果资源没有提供明确的协议，则根据实际情况使用枚举 `{"Freeware", "Proprietary", "Public Domain", "Shareware", "Unknown"}` 中的一个值，并在无法确定时使用 `Unknown`。
 
