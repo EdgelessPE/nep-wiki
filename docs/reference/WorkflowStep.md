@@ -20,7 +20,7 @@
 - **类型：** `Enum<String>`
 - **示例**
   ```toml
-  type = "File"
+  type = "Copy"
   ```
 
 ## if

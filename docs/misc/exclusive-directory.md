@@ -35,9 +35,8 @@
 ```toml
 [setup_flow.patch]
 name = "Patch"
-type = "File"
+type = "Move"
 
-operation = "Move"
 source = "./_patch/config/*"
 target = "${SystemDrive}/Users/Config/"
 overwrite = false
