@@ -83,19 +83,22 @@
   ]
   ```
 
-## compat \*
+## description
 
-（可选）兼容的系统版本。
+资源的简短描述。
 
-- **类型：** `Array<Enum<String>>`
-- **取值：** `{"win10", "win11", "edgeless"}`
+- **类型：** `String`
 - **细节**
 
-  缺省表示不进行兼容性检查。
+  简短描述的内容不能过长，通常一句话足矣。
+
+  尽量使用来自资源内容提供方的描述（例如 GitHub 仓库简介或 readme 中的恰当概括），如果无法找到贴切的官方描述则自行概括。
+  
+  使用的语言应当与镜像站服务语言一致，或是使用英语。
 
 - **示例**
   ```toml
-  compat = ["win10","win11","edgeless"]
+  description = "Visual Studio Code combines the simplicity of a code editor with what developers need for their core edit-build-debug cycle."
   ```
 
 ## licence
@@ -114,4 +117,19 @@
 - **示例**
   ```toml
   licence = "MIT"
+  ```
+
+## compat \*
+
+（可选）兼容的系统版本。
+
+- **类型：** `Array<Enum<String>>`
+- **取值：** `{"win10", "win11", "edgeless"}`
+- **细节**
+
+  缺省表示不进行兼容性检查。
+
+- **示例**
+  ```toml
+  compat = ["win10","win11","edgeless"]
   ```
