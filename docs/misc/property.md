@@ -32,4 +32,4 @@
 - 拓展名：`.nep.7zm`
 - 缩写释义：`Manifest`
 
-此类型的资源包有且仅有 [`package`](/reference/Package.md)  [`manifest`](api.md#清单型) 表和  [`dependencies.suggested`](/reference/Dependencies.md) 项，且`package.type` 值为 `Manifest`，其唯一作用是向用户推荐其他资源包。在用户完成清单资源包的安装后 `ept` 会推荐用户将其删除。
+此类型的资源包有且仅有 [`package`](/reference/Package.md)  [`manifest`](/reference/Manifest.md) 表和  [`dependencies.suggested`](/reference/Dependencies.md) 项，且`package.type` 值为 `Manifest`，其唯一作用是向用户推荐其他资源包。在用户完成清单资源包的安装后 `ept` 会推荐用户将其删除。

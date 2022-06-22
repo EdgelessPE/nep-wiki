@@ -48,9 +48,7 @@
 - **类型：** `String`
 - **细节**
 
-    <!-- TODO:增加系统变量章节 -->
-
-  对于使用安装器安装的软件，提供以[系统变量](nep_env.md)开头的绝对路径；
+  对于使用安装器安装的软件，提供以 [${SystemDrive}](内置变量.md#systemdrive) 或 [${AppData}](内置变量.md#appdata) 开头的绝对路径；
 
   对于使用便携安装的软件，提供相对于 `PackageName` 的相对路径。
 
@@ -62,5 +60,5 @@
 
 - **示例**
   ```toml
-  main_program = "${APP_DATA}/Local/Programs/Microsoft VS Code/Code.exe"
+  main_program = "${AppData}/Local/Programs/Microsoft VS Code/Code.exe"
   ```
