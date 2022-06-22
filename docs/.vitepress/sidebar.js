@@ -34,10 +34,6 @@ export default [
       {
         text:"专用文件夹",
         link:"/misc/exclusive-directory"
-      },
-      {
-        text:"用户自留文件夹",
-        link:"/misc/plot"
       }
     ]
   }
