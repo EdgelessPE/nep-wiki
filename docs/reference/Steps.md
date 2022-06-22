@@ -4,7 +4,7 @@
 
 ## Group
 
-步骤组，与[条件语句](#if)配合使用可以同时控制多个步骤的执行。
+步骤组，与[条件语句](WorkflowStep.md#if)配合使用可以同时控制多个步骤的执行。
 
 不需要提供参数，但是组内步骤的键需要以 `_` 开头。
 
@@ -42,7 +42,7 @@
   ```
 
 :::tip
-Group 与 ExitCode 配合使用时有一些注意事项，详见 [ExitCode](#exitcode)。
+Group 与 ExitCode 配合使用时有一些注意事项，详见 [ExitCode](内置变量.md#exitcode)。
 :::
 
 ## LogicAnd
@@ -107,9 +107,9 @@ Group 与 ExitCode 配合使用时有一些注意事项，详见 [ExitCode](#exi
 
 ## Modify
 
-更改[自定义变量](#自定义变量)或[用户配置变量](#用户配置变量)的值。
+更改[自定义变量](Env.md)或[用户配置变量](UserConfigItem.md)的值。
 :::tip
-[内置变量](#内置变量)*不允许*被工作流或是用户修改，其值仅由加载器运行时决定。
+[内置变量](内置变量.md)*不允许*被工作流或是用户修改，其值仅由加载器运行时决定。
 :::
 
 - **参数**
@@ -228,7 +228,7 @@ Group 与 ExitCode 配合使用时有一些注意事项，详见 [ExitCode](#exi
 移动文件/文件夹。
 
 :::tip
-配合 [\_patch](exclusive-directory.md#补丁文件夹) 专用文件夹可以实现打文件补丁操作。
+配合 [\_patch](/misc/exclusive-directory.md#补丁文件夹) 专用文件夹可以实现打文件补丁操作。
 :::
 
 - **参数**
@@ -320,11 +320,11 @@ Group 与 ExitCode 配合使用时有一些注意事项，详见 [ExitCode](#exi
 
   - `path :String`：脚本路径
   - `args :String`：（可选）参数
-  - `use :Array<String>`：（可选）需要传递的[变量](#内置变量)
+  - `use :Array<String>`：（可选）需要传递的变量，可以是[内置变量](内置变量.md)、[自定义变量](Env.md)或[用户配置变量](UserConfigItem.md)
   - `pwd :String`：（可选）工作目录，缺省时自动判断(引用 `_retinue` 内脚本则为资源根目录，其他位置则在脚本所在目录)
   - `hide :bool`：（可选）是否隐藏脚本执行窗口，缺省为 `true`
   - `wait :bool`：（可选）是否等待脚本执行完成，缺省为 `true`
-  - `fix :Array<String>`：（可选）需要[修复 `_retinue` 引用](exclusive-directory.md#随从文件夹)的文本文件
+  - `fix :Array<String>`：（可选）需要[修复 `_retinue` 引用](/misc/exclusive-directory.md#随从文件夹)的文本文件
 
 - **示例**
 
@@ -451,9 +451,9 @@ Group 与 ExitCode 配合使用时有一些注意事项，详见 [ExitCode](#exi
 
 ## Dialog
 
-弹出对话框，可以使用 [`${Feedback}`](#feedback) 变量获得用户操作反馈。
+弹出对话框，可以使用 [`${Feedback}`](内置变量.md#feedback) 变量获得用户操作反馈。
 :::warning
-由于此操作与 nep 所希望实现的自动化管理理念相悖，因此不到万不得已（例如出现了某些严重的无法自动确定后续步骤的错误）请不要使用此步骤。相应地，你可以使用 [`uc`](#用户配置变量) 来个性化一些配置。
+由于此操作与 nep 所希望实现的自动化管理理念相悖，因此不到万不得已（例如出现了某些严重的无法自动确定后续步骤的错误）请不要使用此步骤。相应地，你可以使用 [`uc`](UserConfigItem.md) 来个性化一些配置。
 :::
 
 - **参数**
@@ -488,7 +488,7 @@ Group 与 ExitCode 配合使用时有一些注意事项，详见 [ExitCode](#exi
 
 从网络下载文件，默认使用 2 线程的 aria2c 完成下载。
 :::warning
-此步骤仅能在[展开工作流](general.md#展开工作流)中使用，且必须提供校验信息。
+此步骤仅能在展开工作流中使用，且必须提供校验信息。
 :::
 
 - **参数**
@@ -516,7 +516,7 @@ Group 与 ExitCode 配合使用时有一些注意事项，详见 [ExitCode](#exi
       ```
 
   :::tip
-  如果需要异步地下载并执行回调，请改为使用脚本，我们会在 [`${Aria2cPath}`](#aria2cpath) 参数上提供一个现成的 aria2c.exe 可执行文件。
+  如果需要异步地下载并执行回调，请改为使用脚本，我们会在 [`${Aria2cPath}`](内置变量.md#aria2cpath) 参数上提供一个现成的 aria2c.exe 可执行文件。
   :::
 
 ## Unzip

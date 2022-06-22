@@ -33,7 +33,7 @@
 
   `Driver` 代表驱动程序；
 
-  `Manifest` 代表[清单资源包](property.md#清单资源包)；
+  `Manifest` 代表[清单资源包](/misc/property.md#清单资源包)；
 
   `Runtime` 代表运行时，例如 `dotNet Framework` `Python` `Microsoft Visual C++ Runtime Library` 等。
 

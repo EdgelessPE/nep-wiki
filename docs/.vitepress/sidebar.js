@@ -30,6 +30,10 @@ export default [
       {
         text:"专用文件夹",
         link:"/misc/exclusive-directory"
+      },
+      {
+        text:"资源包属性",
+        link:"/misc/property"
       }
     ]
   }
