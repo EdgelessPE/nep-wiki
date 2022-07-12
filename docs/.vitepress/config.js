@@ -26,7 +26,8 @@ export default defineConfig({
       repo: 'EdgelessPE/nep-wiki',
       branch: 'master',
       dir: 'docs',
-      text: '在 GitHub 上编辑此页'
+      text: '在 GitHub 上编辑此页',
+      pattern: 'https://github.com/EdgelessPE/nep-wiki/edit/master/docs/:path'
     },
     lastUpdatedText: "最近更新于",
     socialLinks: [
