@@ -492,8 +492,9 @@ Group 与 ExitCode 配合使用时有一些注意事项，详见 [ExitCode](内�
 - **参数**
 
   - `url :String`：链接
-  - `save :String`：保存路径
-  - `md5 :String`：文件 MD5
+  - `save_to :String`：保存路径
+  - `verification_algorithm :Enum<String>`：哈希摘要算法，下列值中的一个：`{"MD5", "SHA-1", "SHA-256","CRC-32"}`
+  - `verification_value :String`：哈希摘要值
   - `overwrite: bool`：（可选）是否覆盖，缺省为`true`
   - `wait :bool`：（可选）是否等待下载完成，缺省为`true`
   - `thread :int`：（可选）线程数，范围`1~16`，缺省为`2`
@@ -506,8 +507,9 @@ Group 与 ExitCode 配合使用时有一些注意事项，详见 [ExitCode](内�
     type = "Download"
 
     url = "https://az764295.vo.msecnd.net/stable/7f6ab5485bbc008386c4386d08766667e155244e/VSCodeUserSetup-x64-1.60.2.exe"
-    save = "./vscode.exe"
-    md5 = "DD4DD2E97577D88B4E6E4B3BF4AA86A9"
+    save_to = "./vscode.exe"
+    verification_algorithm = "MD5"
+    verification_value = "DD4DD2E97577D88B4E6E4B3BF4AA86A9"
     overwrite = false
     wait = true
     thread = 16
