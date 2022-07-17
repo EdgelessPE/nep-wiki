@@ -11,13 +11,13 @@
 - **示例**
 
   ```toml
-  [setup_flow.install_group]
+  [install.install_group]
   name = "Install Group"
   type = "Group"
   # 使用一个条件语句控制整组步骤的执行
   if = "${uc.GROUP_INSTALL}==true"
 
-      [setup_flow.install_group._install_1]
+      [install.install_group._install_1]
       name = "Install 1"
       type = "Execute"
       callInstaller = true
@@ -25,7 +25,7 @@
       command = "./MySoftware/Installer1.exe /S"
 
 
-      [setup_flow.install_group._install_2]
+      [install.install_group._install_2]
       name = "Install 2"
       type = "Execute"
       callInstaller = true
@@ -33,7 +33,7 @@
       command = "./MySoftware/Installer2.exe /S"
 
 
-      [setup_flow.install_group._install_3]
+      [install.install_group._install_3]
       name = "Install 3"
       type = "Execute"
       callInstaller = true
@@ -56,7 +56,7 @@ Group 与 ExitCode 配合使用时有一些注意事项，详见 [ExitCode](内�
 - **示例**
 
   ```toml
-  [setup_flow.verify_success]
+  [install.verify_success]
   name = "Verify success"
   type = "LogicAnd"
 
@@ -66,7 +66,7 @@ Group 与 ExitCode 配合使用时有一些注意事项，详见 [ExitCode](内�
   'Exist("${EdgelessDrive}/Edgeless/Resource/*.7z")'
   ]
 
-  [setup_flow.log_success]
+  [install.log_success]
   name = "Log success"
   type = "Log"
   if = '${ExitCode}==0'
@@ -86,7 +86,7 @@ Group 与 ExitCode 配合使用时有一些注意事项，详见 [ExitCode](内�
 - **示例**
 
   ```toml
-  [setup_flow.check_7z]
+  [install.check_7z]
   name = "Check 7z"
   type = "LogicOr"
 
@@ -96,7 +96,7 @@ Group 与 ExitCode 配合使用时有一些注意事项，详见 [ExitCode](内�
   'Exist("./7z.exe")'
   ]
 
-  [setup_flow.log_7z]
+  [install.log_7z]
   name = "Log 7z"
   type = "Log"
   if = '${ExitCode}==0'
@@ -115,14 +115,14 @@ Group 与 ExitCode 配合使用时有一些注意事项，详见 [ExitCode](内�
 - **参数**
 
   - `key :String`：需要修改的键
-  - `value :String`：新值
+  - `value :any`：新值
 
 - **示例**
 
   修改自定义变量
 
   ```toml
-  [setup_flow.modify_boot_policy]
+  [install.modify_boot_policy]
   name = "Modify boot policy"
   type = "Modify"
   if = '${BootPolicy}=="UEFI"'
@@ -134,7 +134,7 @@ Group 与 ExitCode 配合使用时有一些注意事项，详见 [ExitCode](内�
   修改用户配置变量
 
   ```toml
-  [setup_flow.modify_auto_run]
+  [install.modify_auto_run]
   name = "Modify auto run"
   type = "Modify"
   if = '${BootPolicy}=="UEFI"'
@@ -154,7 +154,7 @@ Group 与 ExitCode 配合使用时有一些注意事项，详见 [ExitCode](内�
 - **示例**
 
   ```toml
-  [setup_flow.wait_1]
+  [install.wait_1]
   name = "Wait 1"
   type = "Wait"
 
@@ -176,7 +176,7 @@ Group 与 ExitCode 配合使用时有一些注意事项，详见 [ExitCode](内�
 - **示例**
 
   ```toml
-  [setup_flow.create_shortcut]
+  [install.create_shortcut]
   name = "Create shortcut"
   type = "Link"
 
@@ -190,7 +190,7 @@ Group 与 ExitCode 配合使用时有一些注意事项，详见 [ExitCode](内�
   可以使用 `target_name: "Folder/Name"` 表示将快捷方式放置于目录中，尤其建议当 `location_default` 值为 `StartMenu` 时这样做：
 
   ```toml
-  [setup_flow.create_shortcut]
+  [install.create_shortcut]
   name = "Create shortcut"
   type = "Link"
 
@@ -214,7 +214,7 @@ Group 与 ExitCode 配合使用时有一些注意事项，详见 [ExitCode](内�
 - **示例**
 
   ```toml
-  [setup_flow.copy_config]
+  [install.copy_config]
   name = "Copy config"
   type = "Copy"
 
@@ -240,7 +240,7 @@ Group 与 ExitCode 配合使用时有一些注意事项，详见 [ExitCode](内�
 - **示例**
 
   ```toml
-  [setup_flow.move_config]
+  [install.move_config]
   name = "Move config"
   type = "Move"
 
@@ -261,7 +261,7 @@ Group 与 ExitCode 配合使用时有一些注意事项，详见 [ExitCode](内�
 - **示例**
 
   ```toml
-  [setup_flow.rename_config]
+  [install.rename_config]
   name = "Rename config"
   type = "Rename"
 
@@ -281,7 +281,7 @@ Group 与 ExitCode 配合使用时有一些注意事项，详见 [ExitCode](内�
 - **示例**
 
   ```toml
-  [setup_flow.delete_config]
+  [install.delete_config]
   name = "Delete config"
   type = "Delete"
 
@@ -301,7 +301,7 @@ Group 与 ExitCode 配合使用时有一些注意事项，详见 [ExitCode](内�
 - **示例**
 
   ```toml
-  [setup_flow.new_folder]
+  [install.new_folder]
   name = "New folder"
   type = "New"
 
@@ -329,7 +329,7 @@ Group 与 ExitCode 配合使用时有一些注意事项，详见 [ExitCode](内�
 - **示例**
 
   ```toml
-  [setup_flow.run_setup_script]
+  [install.run_setup_script]
   name = "Run setup script"
   type = "Script"
 
@@ -358,7 +358,7 @@ Group 与 ExitCode 配合使用时有一些注意事项，详见 [ExitCode](内�
 - **示例**
 
   ```toml
-  [setup_flow.start_vscode]
+  [install.start_vscode]
   name = "Start VSCode"
   type = "Execute"
   if = "${uc.AUTO_RUN}==true"
@@ -382,7 +382,7 @@ Group 与 ExitCode 配合使用时有一些注意事项，详见 [ExitCode](内�
 - **示例**
 
   ```toml
-  [setup_flow.kill_vscode]
+  [install.kill_vscode]
   name = "Kill VSCode"
   type = "Kill"
 
@@ -401,7 +401,7 @@ Group 与 ExitCode 配合使用时有一些注意事项，详见 [ExitCode](内�
 - **示例**
 
   ```toml
-  [setup_flow.add_path]
+  [install.add_path]
   name = "Add PATH"
   type = "Path"
 
@@ -421,7 +421,7 @@ Group 与 ExitCode 配合使用时有一些注意事项，详见 [ExitCode](内�
 - **示例**
 
   ```toml
-  [setup_flow.log_status]
+  [install.log_status]
   name = "Log status"
   type = "Log"
 
@@ -441,7 +441,7 @@ Group 与 ExitCode 配合使用时有一些注意事项，详见 [ExitCode](内�
 - **示例**
 
   ```toml
-  [setup_flow.show_status]
+  [install.show_status]
   name = "Show status"
   type = "Toast"
 
@@ -465,7 +465,7 @@ Group 与 ExitCode 配合使用时有一些注意事项，详见 [ExitCode](内�
 - **示例**
 
   ```toml
-  [setup_flow.show_status]
+  [install.show_status]
   name = "Show status"
   type = "Dialog"
 
@@ -474,7 +474,7 @@ Group 与 ExitCode 配合使用时有一些注意事项，详见 [ExitCode](内�
   options = ["是","否"]
 
 
-  [setup_flow.start_vscode]
+  [install.start_vscode]
   name = "Start vscode"
   type = "Execute"
   if = '${Feedback}==1'
@@ -530,7 +530,7 @@ Group 与 ExitCode 配合使用时有一些注意事项，详见 [ExitCode](内�
 - **示例**
 
   ```toml
-  [setup_flow.unzip_vscode]
+  [install.unzip_vscode]
   name = "Unzip VSCode"
   type = "Unzip"
 
@@ -551,7 +551,7 @@ Group 与 ExitCode 配合使用时有一些注意事项，详见 [ExitCode](内�
 - **示例**
 
     ```toml
-    [setup_flow.send_key]
+    [install.send_key]
     name = "Send key"
     type = "SendKey"
 
@@ -575,7 +575,7 @@ Group 与 ExitCode 配合使用时有一些注意事项，详见 [ExitCode](内�
 - **示例**
 
   ```toml
-  [setup_flow.send_mouse]
+  [install.send_mouse]
   name = "Send mouse"
   type = "SendMouse"
 
@@ -586,7 +586,7 @@ Group 与 ExitCode 配合使用时有一些注意事项，详见 [ExitCode](内�
   或
 
   ```toml
-  [setup_flow.send_mouse]
+  [install.send_mouse]
   name = "Send mouse"
   type = "SendMouse"
 

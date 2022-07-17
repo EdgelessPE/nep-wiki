@@ -40,6 +40,20 @@
   category = "集成开发"
   ```
 
+## alias
+
+软件别名，用户可以使用别名快速安装此软件。
+
+- **类型：** `String`
+- **细节**
+
+  别名的长度必须不少于5位，因为诸如 `code` 这类的短别名非常容易引起冲突。
+
+- **示例**
+  ```toml
+  alias = "VSCode"
+  ```
+
 ## tags
 
 软件标签，用于关联同类软件，便于用户快速查找相似软件。
@@ -47,11 +61,11 @@
 - **类型：** `Array<String>`
 - **细节**
 
-  建议将资源名称的同义词（如 `VSCode` 的同义词有 `Visual Studio Code` `vsc` `code` 等）和相关话题（如 `electron`）加入此处，可以在分类或作者中体现的标签（如`集成开发` `IDE` `Microsoft`）请不要加到这里。
+  建议将资源名称的非别名同义词（如 `Visual Studio Code` 的同义词有 `vsc` `code` 等）和相关话题（如 `electron`）加入此处，可以在别名、分类或作者中体现的标签（如`vscode` `集成开发` `IDE` `Microsoft`）请不要重复加到这里。
 
 - **示例**
   ```toml
-  tags = ["Visual Studio Code", "code", "electron"]
+  tags = ["vsc", "code", "electron"]
   ```
 
 ## language
